@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+
+{% block content %}
+<div class="container text-center">
+<!-- Example split danger button -->
+<!-- Example single danger button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    Choose Employee To Remove
+  </button>
+  <ul class="dropdown-menu" style="background:black;">
+    {% for i in emp %}
+    <li><a class="dropdown-item" href="/Remove_Emp/{{i.id}}" style="color:white">{{i.id}}. {{i.First_name}} {{i.Last_name}} ( {{i.Role}} )</a></li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+    </div>
+
+
+{% endblock content %}

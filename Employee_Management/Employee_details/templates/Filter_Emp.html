@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<style>
+     #form_color
+    {
+      background-color : black;
+      color: white;
+    }
+
+
+    #h2{
+      font-size: 40px;
+      color: rgb(17, 75, 212);
+      font-weight: bold;
+       text-shadow: 2px 2px 4px white;
+      }
+      #h2:hover{
+       color : red;
+      }
+</style>
+
+<form class="container m-5 card p-3 shadow col-6 mx-auto" id="form_color" action="/Filter_Emp" method="POST">
+    <h1 style="text-align: center" id="h2">Filter Employee Details</h1>
+    {%  csrf_token %}
+  <div class="mb-3">
+    <label  class="form-label">First Name/Last Name</label>
+    <input type="text" class="form-control" name="name" value="{{ name }}">
+  </div>
+   <div class="mb-3">
+    <label  class="form-label">Department</label>
+    <input type="text" class="form-control" name="Department" value="{{ Department }}">
+  </div>
+   <div class="mb-3">
+    <label  class="form-label">Role</label>
+    <input type="text" class="form-control" name="Role" value="{{ Role }}">
+  </div>
+     <div class="mb-3">
+    <label  class="form-label">Gender</label>
+    <input type="radio" id="gender" name="Gender" value="{{Gender}}">
+    <label for="gender">M</label>
+     <input type="radio" id="gender1" name="Gender" value="{{Gender}}">
+     <label for="gender1">F</label>
+     <input type="radio" id="gender2" name="Gender" value="">
+     <label for="gender2">None</label><br></div>
+
+
+  <button type="submit" class="btn btn-success">Search</button>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<style>
+    #form_color
+    {
+      background-color : black;
+      color: white;
+    }
+
+
+    #h2{
+      font-size: 40px;
+      color: rgb(17, 75, 212);
+      font-weight: bold;
+       text-shadow: 2px 2px 4px white;
+      }
+      #h2:hover{
+       color : red;
+      }
+</style>
+
+<form class="container m-5 card p-3 shadow col-6 mx-auto" id="form_color" action="{% url 'Add_Emp' %}" method="POST">
+    <h1 style="text-align: center" id="h2">Add Employee Details</h1>
+    {%  csrf_token %}
+  <div class="mb-3">
+    <label  class="form-label">First Name</label>
+    <input type="text" class="form-control" name="First_name" value="{{First_name}}">
+  </div>
+   <div class="mb-3">
+    <label  class="form-label">Last Name</label>
+    <input type="text" class="form-control" name="Last_name" value="{{Last_name}}">
+  </div>
+   <div class="mb-3">
+    <label  class="form-label">Department</label>
+    <input type="number" class="form-control" name="Department" value="{{Department}}">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Salary</label>
+    <input type="number" class="form-control" name="Salary" value="{{Salary}}">
+  </div>
+  <div class="mb-3">
+    <label  class="form-label">Bonus</label>
+    <input type="number" class="form-control" name="Bonus" value="{{Bonus}}">
+  </div>
+   <div class="mb-3">
+    <label  class="form-label">Role</label>
+    <input type="number" class="form-control" name="Role" value="{{Role}}">
+  </div>
+ <div class="mb-3">
+    <label  class="form-label">Phone</label>
+    <input type="number" class="form-control" name="Phone" value="{{Phone}}">
+  </div>
+    <div class="mb-3">
+    <label  class="form-label">Hire_date</label>
+    <input type="date" class="form-control" name="Hire_date" value="{{Hire_date}}">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock content %}
